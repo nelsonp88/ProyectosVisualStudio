@@ -1,0 +1,44 @@
+@TicketSystem_HostAddress = http://localhost:5115
+
+GET {{TicketSystem_HostAddress}}/tickets/
+Accept: application/json
+
+###
+
+GET {{TicketSystem_HostAddress}}/tickets/3
+Accept: application/json
+
+###
+
+POST {{TicketSystem_HostAddress}}/tickets/
+Content-Type: application/json
+
+{
+  "TicketCode": "APR9954", 
+  "EventId": 1, 
+  "ReservationId": 1,  
+  "Status": 1,
+  "Price": 49,
+  "SeatNumber": "B8",
+  "CreatedAt": "2026-05-06"
+}
+
+###
+
+PUT {{TicketSystem_HostAddress}}/tickets/9
+Content-Type: application/json
+
+{
+  "Id": 9,
+  "TicketCode": "QQQ323", 
+  "EventId": 1, 
+  "ReservationId": 1,  
+  "Status": 4,
+  "Price": 11,
+  "SeatNumber": "D3"
+}
+
+###
+
+DELETE {{TicketSystem_HostAddress}}/tickets/1002
+Accept: application/json

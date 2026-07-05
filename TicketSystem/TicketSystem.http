@@ -1,0 +1,75 @@
+@TicketSystem_HostAddress = http://localhost:5115
+
+
+
+// Users
+
+GET {{TicketSystem_HostAddress}}/users/
+Accept: application/json
+
+###
+
+GET {{TicketSystem_HostAddress}}/users/3
+Accept: application/json
+
+###
+
+PUT {{TicketSystem_HostAddress}}/users/3
+Content-Type: application/json
+
+ {
+    "id": 3,
+    "userCode": "YUI7997",
+    "name": "Sonia Constanza Pardo Peláez",
+    "email": "matval@gmail.com",
+    "phoneNumber": "74500023",
+    "createdAt": "2026-07-04T11:25:00",
+    "isActive": false
+  }
+
+###
+
+// Tickets
+
+GET {{TicketSystem_HostAddress}}/tickets/
+Accept: application/json
+
+###
+
+GET {{TicketSystem_HostAddress}}/tickets/3
+Accept: application/json
+
+###
+
+POST {{TicketSystem_HostAddress}}/tickets/
+Content-Type: application/json
+
+{
+  "TicketCode": "TU890098",
+  "EventId": 1, 
+  "ReservationId": 1,  
+  "Status": 2,
+  "Price": 38.52,
+  "SeatNumber": "B4",
+  "CreatedAt": "2026-07-03T11:13:07"
+}
+
+###
+
+PUT {{TicketSystem_HostAddress}}/tickets/4
+Content-Type: application/json
+
+{
+  "Id": 4,
+  "TicketCode": "QQQ323", 
+  "EventId": 1, 
+  "ReservationId": 1,  
+  "Status": 4,
+  "Price": 11,
+  "SeatNumber": "D3"
+}
+
+###
+
+DELETE {{TicketSystem_HostAddress}}/tickets/1003
+Accept: application/json

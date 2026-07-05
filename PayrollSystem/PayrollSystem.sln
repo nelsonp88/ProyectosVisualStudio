@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37203.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayrollBL", "PayrollBL\PayrollBL.csproj", "{49A95C18-DF50-8407-4BF2-F53EA4E50236}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayrollDA", "PayrollDA\PayrollDA.csproj", "{FF625FC8-B8A5-158F-C8EC-2510C1227DEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayrollTest", "PayrollTest\PayrollTest.csproj", "{CD7CA4BA-6E80-B6E3-A6D1-A060F3FF3666}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayrollUI", "PayrollUI\PayrollUI.csproj", "{4C9A3631-68A4-7E25-B67A-BE0C4E843FE9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{49A95C18-DF50-8407-4BF2-F53EA4E50236}.Debug|x64.ActiveCfg = Debug|x64
+		{49A95C18-DF50-8407-4BF2-F53EA4E50236}.Debug|x64.Build.0 = Debug|x64
+		{49A95C18-DF50-8407-4BF2-F53EA4E50236}.Release|x64.ActiveCfg = Release|x64
+		{49A95C18-DF50-8407-4BF2-F53EA4E50236}.Release|x64.Build.0 = Release|x64
+		{FF625FC8-B8A5-158F-C8EC-2510C1227DEF}.Debug|x64.ActiveCfg = Debug|x64
+		{FF625FC8-B8A5-158F-C8EC-2510C1227DEF}.Debug|x64.Build.0 = Debug|x64
+		{FF625FC8-B8A5-158F-C8EC-2510C1227DEF}.Release|x64.ActiveCfg = Release|x64
+		{FF625FC8-B8A5-158F-C8EC-2510C1227DEF}.Release|x64.Build.0 = Release|x64
+		{CD7CA4BA-6E80-B6E3-A6D1-A060F3FF3666}.Debug|x64.ActiveCfg = Debug|x64
+		{CD7CA4BA-6E80-B6E3-A6D1-A060F3FF3666}.Debug|x64.Build.0 = Debug|x64
+		{CD7CA4BA-6E80-B6E3-A6D1-A060F3FF3666}.Release|x64.ActiveCfg = Release|x64
+		{CD7CA4BA-6E80-B6E3-A6D1-A060F3FF3666}.Release|x64.Build.0 = Release|x64
+		{4C9A3631-68A4-7E25-B67A-BE0C4E843FE9}.Debug|x64.ActiveCfg = Debug|x64
+		{4C9A3631-68A4-7E25-B67A-BE0C4E843FE9}.Debug|x64.Build.0 = Debug|x64
+		{4C9A3631-68A4-7E25-B67A-BE0C4E843FE9}.Release|x64.ActiveCfg = Release|x64
+		{4C9A3631-68A4-7E25-B67A-BE0C4E843FE9}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E57B7C4B-8BFC-4BB0-8E8F-D4952A37B39B}
+	EndGlobalSection
+EndGlobal
