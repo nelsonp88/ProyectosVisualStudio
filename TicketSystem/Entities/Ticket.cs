@@ -9,11 +9,15 @@ namespace TicketSystem.Entities
         public string TicketCode { get; set; } = string.Empty;
 
         public int EventId { get; set; }
-        
+
+        public string EventName { get; set; } = string.Empty;
+
         //public Event? Event { get; set; }
 
         public int? ReservationId { get; set; }
-        
+
+        public string ReservationCode { get; set; } = string.Empty;
+
         //public Reservation? Reservation { get; set; }
 
         public TicketStatus Status { get; set; } = TicketStatus.Available;

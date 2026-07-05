@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TicketApp.Models
@@ -10,15 +11,23 @@ namespace TicketApp.Models
         [Display(Name = "Código")]
         public string TicketCode { get; set; } = string.Empty;
 
-        [Display(Name = "Evento")]
         public int EventId { get; set; }
+
+        [Display(Name = "Evento")]
+        public string EventName { get; set; } = string.Empty;
 
         //public Event? Event { get; set; }
 
-        [Display(Name = "Código de reserva")]
+        public IEnumerable<SelectListItem> EventItems { get; set; }
+
         public int? ReservationId { get; set; }
 
+        [Display(Name = "Código de reserva")]
+        public string ReservationCode { get; set; } = string.Empty;
+
         //public Reservation? Reservation { get; set; }
+
+        public IEnumerable<SelectListItem> ReservationItems { get; set; }
 
         [Display(Name = "Estado")]
         public TicketStatus Status { get; set; } = TicketStatus.Available;

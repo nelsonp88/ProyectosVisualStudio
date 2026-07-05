@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
+using System.Net.Http;
 using System.Text;
+using System.Text.Json;
 using TicketApp.Models;
 
 namespace TicketApp.Controllers
@@ -34,7 +37,50 @@ namespace TicketApp.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            return View();
+            List<UserViewModel> users = new List<UserViewModel>();
+            List<EventViewModel> events = new List<EventViewModel>();
+            List<SalesChannelViewModel> salesChannels = new List<SalesChannelViewModel>();
+
+            try
+            {
+                HttpResponseMessage responseUsers = _client.GetAsync(_client.BaseAddress + "users/").Result;
+                if (responseUsers.IsSuccessStatusCode)
+                {
+                    string dataUsers = responseUsers.Content.ReadAsStringAsync().Result;
+                    users = JsonConvert.DeserializeObject<List<UserViewModel>>(dataUsers);
+                }
+
+                HttpResponseMessage responseEvents = _client.GetAsync(_client.BaseAddress + "events/").Result;
+                if (responseEvents.IsSuccessStatusCode)
+                {
+                    string dataEvents = responseEvents.Content.ReadAsStringAsync().Result;
+                    events = JsonConvert.DeserializeObject<List<EventViewModel>>(dataEvents);
+                }
+
+                HttpResponseMessage responseSalesChannels = _client.GetAsync(_client.BaseAddress + "saleschannels/").Result;
+                if (responseSalesChannels.IsSuccessStatusCode)
+                {
+                    string dataSalesChannels = responseSalesChannels.Content.ReadAsStringAsync().Result;
+                    salesChannels = JsonConvert.DeserializeObject<List<SalesChannelViewModel>>(dataSalesChannels);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions/logging here
+            }
+
+            var model = new ReservationViewModel
+            {
+                UserItems = users.Select(u => new SelectListItem(u.Name, u.Id.ToString())),
+                EventItems = events.Select(e => new SelectListItem(e.Name, e.Id.ToString())),
+                SalesChannelItems = salesChannels.Select(s => new SelectListItem(s.Name, s.Id.ToString()))
+            };
+            // Bind data to SelectList (Value field, Text field)
+            ViewBag.UserItems = new SelectList(users, "Id", "Name");
+            ViewBag.EventItems = new SelectList(events, "Id", "Name");
+            ViewBag.SalesChannelItems = new SelectList(salesChannels, "Id", "Name");
+
+            return View(model);
         }
 
         [HttpPost]
@@ -64,9 +110,40 @@ namespace TicketApp.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
+            List<UserViewModel> users = new List<UserViewModel>();
+            List<EventViewModel> events = new List<EventViewModel>();
+            List<SalesChannelViewModel> salesChannels = new List<SalesChannelViewModel>();
+
+            HttpResponseMessage responseUsers = _client.GetAsync(_client.BaseAddress + "users/").Result;
+            if (responseUsers.IsSuccessStatusCode)
+            {
+                string dataUsers = responseUsers.Content.ReadAsStringAsync().Result;
+                users = JsonConvert.DeserializeObject<List<UserViewModel>>(dataUsers);
+            }
+
+            HttpResponseMessage responseEvents = _client.GetAsync(_client.BaseAddress + "events/").Result;
+            if (responseEvents.IsSuccessStatusCode)
+            {
+                string dataEvents = responseEvents.Content.ReadAsStringAsync().Result;
+                events = JsonConvert.DeserializeObject<List<EventViewModel>>(dataEvents);
+            }
+
+            HttpResponseMessage responseSalesChannels = _client.GetAsync(_client.BaseAddress + "saleschannels/").Result;
+            if (responseSalesChannels.IsSuccessStatusCode)
+            {
+                string dataSalesChannels = responseSalesChannels.Content.ReadAsStringAsync().Result;
+                salesChannels = JsonConvert.DeserializeObject<List<SalesChannelViewModel>>(dataSalesChannels);
+            }
+
             try
             {
-                ReservationViewModel reservation = new ReservationViewModel();
+                ReservationViewModel reservation = new ReservationViewModel 
+                {
+                    UserItems = users.Select(u => new SelectListItem(u.Name, u.Id.ToString())),
+                    EventItems = events.Select(e => new SelectListItem(e.Name, e.Id.ToString())),
+                    SalesChannelItems = salesChannels.Select(s => new SelectListItem(s.Name, s.Id.ToString()))
+                };
+
                 HttpResponseMessage response = _client.GetAsync(_client.BaseAddress + "reservations/" + id.ToString()).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -74,6 +151,11 @@ namespace TicketApp.Controllers
                     string data = response.Content.ReadAsStringAsync().Result;
                     reservation = JsonConvert.DeserializeObject<ReservationViewModel>(data);
                 }
+
+                ViewBag.UserItems = new SelectList(users, "Id", "Name");
+                ViewBag.EventItems = new SelectList(events, "Id", "Name");
+                ViewBag.SalesChannelItems = new SelectList(salesChannels, "Id", "Name");
+
                 return View(reservation);
             }
             catch (Exception ex)

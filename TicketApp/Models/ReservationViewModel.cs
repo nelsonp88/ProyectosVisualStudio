@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TicketApp.Models
@@ -16,17 +17,23 @@ namespace TicketApp.Models
         public string UserName { get; set; } = string.Empty;
 
         //public User? User { get; set; }
-       
+
+        public IEnumerable<SelectListItem> UserItems { get; set; }
+
         public int EventId { get; set; }
 
         [Display(Name = "Evento")]
         public string EventName { get; set; } = string.Empty;
 
         //public Event? Event { get; set; }
-        
+
+        public IEnumerable<SelectListItem> EventItems { get; set; }
+
         public int SalesChannelId { get; set; }
 
         //public SalesChannel? SalesChannel { get; set; }
+
+        public IEnumerable<SelectListItem> SalesChannelItems { get; set; }
 
         [Display(Name = "Canal de ventas")]
         public string SalesChannelName { get; set; } = string.Empty;
@@ -58,9 +65,13 @@ namespace TicketApp.Models
 
     public enum ReservationStatus
     {
+        [Display(Name = "Pendiente")]
         Pending,
+        [Display(Name = "Confirmada")]
         Confirmed,
+        [Display(Name = "Vencida")]
         Expired,
+        [Display(Name = "Cancelada")]
         Cancelled
     }
 }

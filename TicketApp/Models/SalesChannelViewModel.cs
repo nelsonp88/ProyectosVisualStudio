@@ -29,10 +29,15 @@ namespace TicketApp.Models
 
     public enum ChannelType
     {
+        [Display(Name = "Portal Web")]
         WebPortal,
+        [Display(Name = "Punto de Venta")]
         Office,
+        [Display(Name = "Portal Web Colaborador")]
         CollaboratorWeb,
+        [Display(Name = "Punto de Venta Colaborador")]
         CollaboratorPOS,
+        [Display(Name = "App Móvil")]
         MobileApp
     }
 }
