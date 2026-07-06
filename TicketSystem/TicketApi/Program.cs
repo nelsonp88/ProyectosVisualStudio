@@ -6,6 +6,8 @@ using UserSystem.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.AddServiceDefaults();
+
 // Add services to the container.
 
 builder.Services.AddTransient<IUserRepository, UserRepository>();
@@ -340,5 +342,7 @@ app.MapDelete("/tickets/{id:int}", async
 });
 
 #endregion
+
+app.MapDefaultEndpoints();
 
 app.Run();

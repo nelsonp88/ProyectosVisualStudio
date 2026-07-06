@@ -15,6 +15,29 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketAspire.ApiService", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketAspire.Web", "TicketAspire\TicketAspire.Web\TicketAspire.Web.csproj", "{1789B195-A312-DAD7-9F20-A7A5593745B1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ScriptsBD", "ScriptsBD", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ScriptsSQLServer", "ScriptsSQLServer", "{5067BA12-4721-4429-A542-F69427DD295E}"
+	ProjectSection(SolutionItems) = preProject
+		ScriptsBD\ScriptsSQLServer\TicketSystemDB_CreateDB.sql = ScriptsBD\ScriptsSQLServer\TicketSystemDB_CreateDB.sql
+		ScriptsBD\ScriptsSQLServer\TicketSystemDB_CreateTablas.sql = ScriptsBD\ScriptsSQLServer\TicketSystemDB_CreateTablas.sql
+		ScriptsBD\ScriptsSQLServer\Tickets_GetAll.sql = ScriptsBD\ScriptsSQLServer\Tickets_GetAll.sql
+		ScriptsBD\ScriptsSQLServer\Ticket_DeleteById.sql = ScriptsBD\ScriptsSQLServer\Ticket_DeleteById.sql
+		ScriptsBD\ScriptsSQLServer\Ticket_ExistsById.sql = ScriptsBD\ScriptsSQLServer\Ticket_ExistsById.sql
+		ScriptsBD\ScriptsSQLServer\Ticket_GetById.sql = ScriptsBD\ScriptsSQLServer\Ticket_GetById.sql
+		ScriptsBD\ScriptsSQLServer\Ticket_Insert.sql = ScriptsBD\ScriptsSQLServer\Ticket_Insert.sql
+		ScriptsBD\ScriptsSQLServer\Ticket_Update.sql = ScriptsBD\ScriptsSQLServer\Ticket_Update.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ScriptsPostgreSQL", "ScriptsPostgreSQL", "{BC40CF66-AC30-4EBA-95AC-FA2FCEF9D34D}"
+	ProjectSection(SolutionItems) = preProject
+		ScriptsBD\ScriptsPostgreSQL\ScriptCreateDB.sql = ScriptsBD\ScriptsPostgreSQL\ScriptCreateDB.sql
+		ScriptsBD\ScriptsPostgreSQL\ScriptCreateTables.sql = ScriptsBD\ScriptsPostgreSQL\ScriptCreateTables.sql
+		ScriptsBD\ScriptsPostgreSQL\ScriptFunctions.sql = ScriptsBD\ScriptsPostgreSQL\ScriptFunctions.sql
+		ScriptsBD\ScriptsPostgreSQL\ScriptInserts.sql = ScriptsBD\ScriptsPostgreSQL\ScriptInserts.sql
+		ScriptsBD\ScriptsPostgreSQL\ScriptStoredProcedures.sql = ScriptsBD\ScriptsPostgreSQL\ScriptStoredProcedures.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +71,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5067BA12-4721-4429-A542-F69427DD295E} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{BC40CF66-AC30-4EBA-95AC-FA2FCEF9D34D} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D36FB3B8-1539-4EB5-A0AB-2D60A8392A9A}

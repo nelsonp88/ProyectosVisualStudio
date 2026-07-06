@@ -11,6 +11,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\TicketApi\TicketApi.csproj" />
+    <ProjectReference Include="..\..\TicketApp\TicketApp.csproj" />
     <ProjectReference Include="..\TicketAspire.ApiService\TicketAspire.ApiService.csproj" />
     <ProjectReference Include="..\TicketAspire.Web\TicketAspire.Web.csproj" />
   </ItemGroup>

@@ -1,0 +1,8 @@
+INSERT INTO APPUSER (Id, UserCode, Name, Email, PhoneNumber, CreatedAt, IsActive) VALUES (1, 'USER1', 'User 1', 'user1@tickets.com', '410006696', '2026-07-02', true);
+INSERT INTO SALESCHANNEL (Id, ChannelCode, Name, Type, ApiKey, IsActive, CreatedAt) VALUES (1, '001', 'Portal Web FunEvents', 1, 'ABC123', true, '2026-07-02');
+INSERT INTO EVENT (Id, EventCode, Name, Description, EventDate, Venue, TotalTickets, AvailableTickets, BasePrice, CreatedAt, IsActive) VALUES (1, 'ABC454', 'Concierto', 'Concierto No. 1', '2026-08-23', 'Movistar Arena', 2000, 100, 25000.00, '2026-07-02', true);
+INSERT INTO RESERVATION (Id, ReservationCode, UserId, EventId, SalesChannelId, TicketQuantity, TotalAmount, Status, ReservedAt, ExpiresAt, ConfirmedAt) VALUES (1, 'UYOO9009889', 1, 1, 1, 4, 2000.00, 2, '2026-07-02', '2026-08-31', '2026-07-02');
+INSERT INTO TICKET (Id, TicketCode, EventId, ReservationId, Status, Price, SeatNumber, CreatedAt) VALUES (3, 'ABC1234', 1, 1, 2, 47.00, 'C1', '2026-07-02');
+INSERT INTO TICKET (Id, TicketCode, EventId, ReservationId, Status, Price, SeatNumber, CreatedAt) VALUES (4, 'UOIR899', 1, 1, 3, 24.00, '1', '2026-07-02');
+INSERT INTO TICKET (Id, TicketCode, EventId, ReservationId, Status, Price, SeatNumber, CreatedAt) VALUES (1003, 'MDR754', 1, 1, 4, 23.40, 'D8', '2026-06-22');
+INSERT INTO TICKET (Id, TicketCode, EventId, ReservationId, Status, Price, SeatNumber, CreatedAt) VALUES (1004, 'TSC8499', 1, 1, 1, 32.00, 'A4', '2026-06-25');
