@@ -38,6 +38,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ScriptsPostgreSQL", "Script
 		ScriptsBD\ScriptsPostgreSQL\ScriptStoredProcedures.sql = ScriptsBD\ScriptsPostgreSQL\ScriptStoredProcedures.sql
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{2DD73348-E352-44B0-AAC2-EF124F42B6D4}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\Documento Prueba Técnica.docx = Docs\Documento Prueba Técnica.docx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
